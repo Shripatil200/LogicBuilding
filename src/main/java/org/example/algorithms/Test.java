@@ -37,6 +37,8 @@ public class Test {
         System.out.println(list2.getFirst());
         System.out.println(list2.getLast());
 
+        list2.add(2,154);
+        System.out.println(list2);
 
     }
 }

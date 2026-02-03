@@ -2,8 +2,6 @@ package org.example.algorithms;
 
 import java.util.Collection;
 import java.util.NoSuchElementException;
-import java.util.Objects;
-import java.util.function.Consumer;
 
 public class CustomLinkedList<E>  {
     transient int size = 0;
@@ -243,6 +241,31 @@ public class CustomLinkedList<E>  {
 
 
 
+    public boolean add(int index, E e){
+
+        checkPositionIndex(index);
+
+        if(index == size){
+            linkLast(e);
+        }else{
+            linkBefore(e, node(index));
+        }
+
+        return true;
+    }
+
+    void linkBefore(E e, Node<E> suss){
+        final Node<E> pred = suss.prev;
+        final Node<E> newNode = new Node<>(pred, e, suss);
+        suss.prev = newNode;
+
+        if(pred == null){
+            first = newNode;
+        }else{
+            pred.next = newNode;
+        }
+        size++;
+    }
 
 
 
@@ -259,7 +282,6 @@ public class CustomLinkedList<E>  {
         }
        return str.toString();
     }
-
 
 
 
