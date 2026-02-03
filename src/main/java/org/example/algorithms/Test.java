@@ -1,9 +1,6 @@
 package org.example.algorithms;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Test {
 
@@ -39,5 +36,7 @@ public class Test {
 
         System.out.println(list2.getFirst());
         System.out.println(list2.getLast());
+
+
     }
 }
