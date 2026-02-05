@@ -19,17 +19,31 @@ A subarray is a contiguous subsequence of the array.
 public class ArithmeticSlice {
 
     public static int numberOfArithmeticSlices(int[] nums) {
-        if (nums.length < 3) return 0;
+//        if (nums.length < 3) return 0;
+//
+//        int[] arr = new int[nums.length];
+//
+//        for(int i = 2; i < nums.length; i++){
+//            if(nums[i] - nums[i-1] == nums[i-1] - nums[i-2]){
+//                arr[i] = arr[i-1] + 1;
+//            }
+//        }
+//        return Arrays.stream(arr).sum();
 
-        int[] arr = new int[nums.length];
-
+        if(nums.length < 3) return 0;
+        int count = 0;
+        int current = 0;
         for(int i = 2; i < nums.length; i++){
-            if(nums[i] - nums[i-1] == nums[i-1] - nums[i-2]){
-                arr[i] = arr[i-1] + 1;
+            if(nums[i] - nums[i-1] == nums[i-1] - nums[i-2]) {
+                current++;
+                count += current;
+            }else{
+                current = 0;
             }
         }
-        return Arrays.stream(arr).sum();
+        return count;
     }
+
 
 
     public static void main(String[] args) {
