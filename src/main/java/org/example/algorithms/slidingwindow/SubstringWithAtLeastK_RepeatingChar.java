@@ -11,7 +11,7 @@ Given a string s and an integer k, return the length of the longest substring of
 if no such substring exists, return 0.
  */
 
-public class SubstringWithAtLeastK_DistinctChar {
+public class SubstringWithAtLeastK_RepeatingChar {
 
     private static int longestSubstring(String s, int k){
         return helper(s.toCharArray(), 0, s.length(), k);
